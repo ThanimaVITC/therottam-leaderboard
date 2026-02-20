@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="{{ url_for('static', filename='thanima_logo.webp') }}" alt="Therottam Leaderboards">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/" class="{% if leaderboard_num == 0 %}active{% endif %}">Main</a></li>
+                <li><a href="/leaderboard/1" class="{% if leaderboard_num == 1 %}active{% endif %}">Board 1</a></li>
+                <li><a href="/leaderboard/2" class="{% if leaderboard_num == 2 %}active{% endif %}">Board 2</a></li>
+                <li><a href="/leaderboard/3" class="{% if leaderboard_num == 3 %}active{% endif %}">Board 3</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>{{ title }}</h1>
+            <p class="subtitle">{% if leaderboard_num == 0 %}Combined rankings of all leaderboards{% else %}Track scores for this category{% endif %}</p>
+        </header>
+
+        <div class="leaderboard-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="rank-col">Rank</th>
+                        <th class="team-col">Team</th>
+                        <th class="score-col">
+                            {% if leaderboard_num == 0 %}Total Score{% else %}Score{% endif %}
+                        </th>
+                        {% if leaderboard_num == 0 %}
+                        <th class="breakdown-col">Breakdown</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for team in teams %}
+                    <tr class="{% if loop.index <= 3 %}top-three{% endif %}" 
+                        data-team="{{ team.name }}"
+                        data-lb1="{{ team.leaderboard1_score }}"
+                        data-lb2="{{ team.leaderboard2_score }}"
+                        data-lb3="{{ team.leaderboard3_score }}"
+                        data-total="{{ team.total_score }}"
+                        onclick="showTeamModal(this)">
+                        <td class="rank-col">
+                            <span class="rank {% if loop.index == 1 %}gold{% elif loop.index == 2 %}silver{% elif loop.index == 3 %}bronze{% endif %}">
+                                {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% elif loop.index == 3 %}🥉{% else %}{{ loop.index }}{% endif %}
+                            </span>
+                        </td>
+                        <td class="team-col">{{ team.name }}</td>
+                        <td class="score-col">
+                            <span class="score">
+                                {% if leaderboard_num == 0 %}{{ team.total_score }}{% else %}{{ team['leaderboard' + leaderboard_num|string + '_score'] }}{% endif %}
+                            </span>
+                        </td>
+                        {% if leaderboard_num == 0 %}
+                        <td class="breakdown-col">
+                            <span class="score-badge lb1">{{ team.leaderboard1_score }}</span>
+                            <span class="score-badge lb2">{{ team.leaderboard2_score }}</span>
+                            <span class="score-badge lb3">{{ team.leaderboard3_score }}</span>
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4" class="no-data">No teams yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Made with ♥ by Thanima Tech</p>
+    </footer>
+
+    <div class="modal-overlay" id="teamModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 id="modalTeamName">Team Name</h2>
+            <div class="modal-scores">
+                <div class="modal-score-item">
+                    <span class="modal-label">Leaderboard 1</span>
+                    <span class="modal-value lb1" id="modalLb1">0</span>
+                </div>
+                <div class="modal-score-item">
+                    <span class="modal-label">Leaderboard 2</span>
+                    <span class="modal-value lb2" id="modalLb2">0</span>
+                </div>
+                <div class="modal-score-item">
+                    <span class="modal-label">Leaderboard 3</span>
+                    <span class="modal-value lb3" id="modalLb3">0</span>
+                </div>
+                <div class="modal-score-item total">
+                    <span class="modal-label">Total Score</span>
+                    <span class="modal-value" id="modalTotal">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        function showTeamModal(row) {
+            const modal = document.getElementById('teamModal');
+            document.getElementById('modalTeamName').textContent = row.dataset.team;
+            document.getElementById('modalLb1').textContent = row.dataset.lb1;
+            document.getElementById('modalLb2').textContent = row.dataset.lb2;
+            document.getElementById('modalLb3').textContent = row.dataset.lb3;
+            document.getElementById('modalTotal').textContent = row.dataset.total;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            document.getElementById('teamModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>

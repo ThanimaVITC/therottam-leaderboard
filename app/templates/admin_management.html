@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar admin-navbar">
+        <div class="nav-container">
+            <a href="/admin/teams" class="nav-logo">
+                <img src="{{ url_for('static', filename='thanima_logo.webp') }}" alt="Therottam Leaderboards">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/admin/teams" class="{% if request.endpoint == 'admin.teams' %}active{% endif %}">Add Teams</a></li>
+                <li><a href="/admin/points" class="{% if request.endpoint == 'admin.points' %}active{% endif %}">Add Points</a></li>
+                <li><a href="/admin/management" class="{% if request.endpoint == 'admin.management' %}active{% endif %}">Management</a></li>
+                <li><a href="/admin/logout" class="logout-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>Management</h1>
+            <p class="subtitle">Manage admin users</p>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="admin-card">
+            <h2>Add New User</h2>
+            <form method="POST" class="admin-form">
+                <input type="hidden" name="action" value="add_user">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add User</button>
+            </form>
+        </div>
+
+        <div class="admin-card">
+            <h2>Change Password</h2>
+            <form method="POST" class="admin-form">
+                <input type="hidden" name="action" value="change_password">
+                <div class="form-group">
+                    <label for="admin_id">Select User</label>
+                    <select id="admin_id" name="admin_id" required>
+                        {% for admin in admins %}
+                        <option value="{{ admin._id }}" {% if admin._id == current_admin_id %}selected{% endif %}>
+                            {{ admin.username }}{% if admin._id == current_admin_id %} (You){% endif %}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="new_password">New Password</label>
+                    <input type="password" id="new_password" name="new_password" placeholder="Enter new password" required>
+                </div>
+                <button type="submit" class="btn btn-success">Change Password</button>
+            </form>
+        </div>
+
+        <div class="teams-list">
+            <h2>All Users</h2>
+            <div class="teams-grid">
+                {% for admin in admins %}
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3>{{ admin.username }}</h3>
+                        {% if admin._id != current_admin_id %}
+                        <form method="POST" style="display:inline;">
+                            <input type="hidden" name="action" value="delete_user">
+                            <input type="hidden" name="admin_id" value="{{ admin._id }}">
+                            <button type="submit" class="btn-delete" onclick="return confirm('Delete this user?')">Delete</button>
+                        </form>
+                        {% else %}
+                        <span class="badge">Current User</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% else %}
+                <p class="no-data">No users found.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Made with ♥ by Thanima Tech</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Points</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar admin-navbar">
+        <div class="nav-container">
+            <a href="/admin/teams" class="nav-logo">
+                <img src="{{ url_for('static', filename='thanima_logo.webp') }}" alt="Therottam Leaderboards">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/admin/teams" class="{% if request.endpoint == 'admin.teams' %}active{% endif %}">Add Teams</a></li>
+                <li><a href="/admin/points" class="{% if request.endpoint == 'admin.points' %}active{% endif %}">Add Points</a></li>
+                <li><a href="/admin/management" class="{% if request.endpoint == 'admin.management' %}active{% endif %}">Management</a></li>
+                <li><a href="/admin/logout" class="logout-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>Add Points</h1>
+            <p class="subtitle">Add points to teams for specific leaderboards</p>
+        </header>
+
+        <div class="lb-selector">
+            <span class="lb-label">Select Leaderboard:</span>
+            <div class="lb-buttons">
+                <button type="button" class="lb-btn active" data-lb="1">
+                    <span class="lb-dot"></span>
+                    Leaderboard 1
+                </button>
+                <button type="button" class="lb-btn" data-lb="2">
+                    <span class="lb-dot"></span>
+                    Leaderboard 2
+                </button>
+                <button type="button" class="lb-btn" data-lb="3">
+                    <span class="lb-dot"></span>
+                    Leaderboard 3
+                </button>
+            </div>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="admin-card" id="addPointsCard">
+            <div class="card-header">
+                <h2>Add Points</h2>
+                <span class="selected-lb-indicator lb1" id="lbIndicator">Leaderboard 1</span>
+            </div>
+            <form method="POST" class="admin-form" id="pointsForm">
+                <input type="hidden" id="leaderboard_num" name="leaderboard_num" value="1">
+                <div class="form-group">
+                    <label for="team_id">Select Team</label>
+                    <select id="team_id" name="team_id" required>
+                        <option value="">-- Select Team --</option>
+                        {% for team in teams %}
+                        <option value="{{ team._id }}">{{ team.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="points">Points to Add</label>
+                    <input type="number" id="points" name="points" min="1" placeholder="Enter points" required>
+                </div>
+                <button type="submit" class="btn btn-success">Add Points</button>
+            </form>
+        </div>
+
+        <div class="teams-list">
+            <h2>All Teams</h2>
+            <div class="teams-grid">
+                {% for team in teams %}
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3>{{ team.name }}</h3>
+                    </div>
+                    <div class="team-scores">
+                        <div class="score-item">
+                            <span class="label">LB1</span>
+                            <span class="value">{{ team.leaderboard1_score }}</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="label">LB2</span>
+                            <span class="value">{{ team.leaderboard2_score }}</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="label">LB3</span>
+                            <span class="value">{{ team.leaderboard3_score }}</span>
+                        </div>
+                        <div class="score-item total">
+                            <span class="label">Total</span>
+                            <span class="value">{{ team.total_score }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <p class="no-data">No teams created yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Made with ♥ by Thanima Tech</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        const lbBtns = document.querySelectorAll('.lb-btn');
+        const lbInput = document.getElementById('leaderboard_num');
+        const lbIndicator = document.getElementById('lbIndicator');
+        
+        lbBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                lbBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const lb = btn.dataset.lb;
+                lbInput.value = lb;
+                lbIndicator.textContent = 'Leaderboard ' + lb;
+                lbIndicator.className = 'selected-lb-indicator lb' + lb;
+            });
+        });
+    </script>
+</body>
+</html>
