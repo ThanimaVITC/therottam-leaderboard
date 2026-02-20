@@ -1,0 +1,478 @@
+TimeUTC,timestampInMs,requestPath,requestMethod,requestQueryString,responseStatusCode,requestId,requestUserAgent,level,environment,branch,vercelCache,type,function,host,deploymentDomain,deploymentId,durationMs,region,maxMemoryUsed,memorySize,message,projectId,traceId,sessionId,invocationId,instanceId,concurrency
+2026-02-20 21:25:00,1771622700769,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/favicon.ico,GET,,500,7xmmg-1771622699650-8790248cdfe4,vercel-favicon/1.0,error,production,master,MISS,function,/favicon.ico,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:59,1771622699650,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/favicon.ico,GET,,500,7xmmg-1771622699650-8790248cdfe4,vercel-favicon/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,1065,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF24NC5WM499CEC4MFF4MV,,-1
+2026-02-20 21:24:59,1771622699685,therottam-leaderboard.vercel.app/,GET,,500,2b7mm-1771622697791-c095e3f8e664,"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",error,production,master,MISS,function,/,therottam-leaderboard.vercel.app,therottam-leaderboard.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:57,1771622697791,therottam-leaderboard.vercel.app/,GET,,500,2b7mm-1771622697791-c095e3f8e664,"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",,production,master,MISS,function,/api/index.py,therottam-leaderboard.vercel.app,therottam-leaderboard.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,1080,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF23JNGR1ZS2X07WX9Z0T4,,-1
+2026-02-20 21:24:58,1771622698498,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/favicon.ico,GET,,500,zg5r2-1771622697364-28e4e8a6387a,vercel-favicon/1.0,error,production,master,MISS,function,/favicon.ico,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:57,1771622697364,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/favicon.ico,GET,,500,zg5r2-1771622697364-28e4e8a6387a,vercel-favicon/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,1076,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF22DZSFK8XSBX0E0TTY4D,,-1
+2026-02-20 21:24:57,1771622697231,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,frnt5-1771622696103-743ed8f20dae,vercel-favicon/1.0,error,production,master,MISS,function,/,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:56,1771622696103,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,frnt5-1771622696103-743ed8f20dae,vercel-favicon/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,1068,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF216KW1J2SWCXKJZSTQM7,,-1
+2026-02-20 21:24:55,1771622695021,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,d4djv-1771622693844-7bb0dc7ebf8e,vercel-favicon/1.0,error,production,master,MISS,function,/,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:53,1771622693844,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,d4djv-1771622693844-7bb0dc7ebf8e,vercel-favicon/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,1076,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF1Z1D1ZW4ZNSMD14Q800A,,-1
+2026-02-20 21:24:53,1771622693166,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/favicon.ico,GET,,500,4pbjl-1771622692043-9c924d60ee52,vercel-screenshot/1.0,error,production,master,MISS,function,/favicon.ico,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:52,1771622692043,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/favicon.ico,GET,,500,4pbjl-1771622692043-9c924d60ee52,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,1054,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF1X7W74M9V0YH8CJ4Z4TP,,-1
+2026-02-20 21:24:52,1771622692572,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/favicon.ico,GET,,500,nhs27-1771622691539-af966604afc6,vercel-screenshot/1.0,error,production,master,MISS,function,/favicon.ico,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:51,1771622691539,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/favicon.ico,GET,,500,nhs27-1771622691539-af966604afc6,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,862,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF1WV94VP0G31N31P25JB3,,-1
+2026-02-20 21:24:51,1771622691964,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,tgrgj-1771622690731-1f8fdb8412b0,vercel-screenshot/1.0,error,production,master,MISS,function,/,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:50,1771622690731,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,tgrgj-1771622690731-1f8fdb8412b0,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,1060,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF1W282QPQXTXYBA61FVWZ,,-1
+2026-02-20 21:24:51,1771622691435,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,jpf24-1771622690361-c25a5dc8dbf4,vercel-screenshot/1.0,error,production,master,MISS,function,/,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:50,1771622690361,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,jpf24-1771622690361-c25a5dc8dbf4,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,877,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF1VQ29KHF9F9CQKHVSXX6,,-1
+2026-02-20 21:24:50,1771622690249,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,r7pv5-1771622687922-4acfdbca41f1,vercel-screenshot/1.0,error,production,master,MISS,function,/,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:47,1771622687922,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,r7pv5-1771622687922-4acfdbca41f1,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,898,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF1SEH9BJC5AZ1049PJKQS,,-1
+2026-02-20 21:24:50,1771622690561,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,s4gxh-1771622687831-c09b40bab4c1,vercel-screenshot/1.0,error,production,master,MISS,function,/,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,,,,,"Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Error importing api/index.py:
+Traceback (most recent call last):
+File ""/var/task/_vendor/vercel_runtime/vc_init.py"", line 512, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api/index.py"", line 23, in <module>
+mongo = PyMongo(app, db=db_name)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 110, in __init__
+self.init_app(app, uri, *args, **kwargs)
+File ""/var/task/_vendor/flask_pymongo/__init__.py"", line 154, in init_app
+self.cx = MongoClient(*args, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in __init__
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+File ""/var/task/_vendor/pymongo/mongo_client.py"", line 806, in <genexpr>
+dict(common.validate(keyword_opts.cased_key(k), v) for k, v in keyword_opts.items())
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 821, in validate
+value = validator(option, value)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/_vendor/pymongo/common.py"", line 167, in raise_config_error
+raise ConfigurationError(f""Unknown option {key}"")
+pymongo.errors.ConfigurationError: Unknown option db
+Python process exited with exit status: 1. The logs above can help with debugging the issue.",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:24:47,1771622687831,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app/,GET,,500,s4gxh-1771622687831-c09b40bab4c1,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,therottam-leaderboard-d9kkk3t12-legitcoconuts-projects.vercel.app,dpl_BsXg7G4nbrWRbHqfHkZ7gMSGVm5q,1059,iad1,-1,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYF1SEH9BJC5AZ103SEFA04,,-1
+2026-02-20 21:11:05,1771621865213,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/favicon.png,GET,,404,pbl6r-1771621865138-185a699c1095,vercel-favicon/1.0,info,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"127.0.0.1 - - [20/Feb/2026 21:11:05] ""GET /favicon.png HTTP/1.1"" 404 -",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:11:05,1771621865138,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/favicon.png,GET,,404,pbl6r-1771621865138-185a699c1095,vercel-favicon/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,7,iad1,238,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYE8NPW8E3C4ZFHJ0G4N1Q7,DE3sn3tkZrtg,1
+2026-02-20 21:11:05,1771621865095,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/favicon.ico,GET,,404,pbl6r-1771621865035-2772b88349f3,vercel-favicon/1.0,info,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"127.0.0.1 - - [20/Feb/2026 21:11:05] ""GET /favicon.ico HTTP/1.1"" 404 -",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:11:05,1771621865035,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/favicon.ico,GET,,404,pbl6r-1771621865035-2772b88349f3,vercel-favicon/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,6,iad1,238,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYE8NKNF8A0WHGT1D1ERVWV,DE3sn3tkZrtg,1
+2026-02-20 21:11:04,1771621864877,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,pdl6v-1771621864811-c88255a399d1,vercel-favicon/1.0,error,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"Exception on / [GET]
+Traceback (most recent call last):
+  File ""/var/task/_vendor/flask/app.py"", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/api/index.py"", line 42, in main_leaderboard
+    teams = list(mongo.db.teams.find())
+                 ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'teams'",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:11:04,1771621864877,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,pdl6v-1771621864811-c88255a399d1,vercel-favicon/1.0,info,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"127.0.0.1 - - [20/Feb/2026 21:11:04] ""GET / HTTP/1.1"" 500 -",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:11:04,1771621864811,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,pdl6v-1771621864811-c88255a399d1,vercel-favicon/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,6,iad1,238,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYE8NCZJD2CAVE6JAK5R3X9,DE3sn3tkZrtg,1
+2026-02-20 21:11:03,1771621863763,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,fh9z8-1771621863702-451b240ac1e3,vercel-favicon/1.0,error,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"Exception on / [GET]
+Traceback (most recent call last):
+  File ""/var/task/_vendor/flask/app.py"", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/api/index.py"", line 42, in main_leaderboard
+    teams = list(mongo.db.teams.find())
+                 ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'teams'",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:11:03,1771621863763,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,fh9z8-1771621863702-451b240ac1e3,vercel-favicon/1.0,info,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"127.0.0.1 - - [20/Feb/2026 21:11:03] ""GET / HTTP/1.1"" 500 -",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:11:03,1771621863702,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,fh9z8-1771621863702-451b240ac1e3,vercel-favicon/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,7,iad1,238,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYE8MA28432H6N5CQ8PVD67,DE3sn3tkZrtg,1
+2026-02-20 21:10:57,1771621857291,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/favicon.ico,GET,,404,6cqjc-1771621857224-8de54ad5c0e9,vercel-screenshot/1.0,info,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"127.0.0.1 - - [20/Feb/2026 21:10:57] ""GET /favicon.ico HTTP/1.1"" 404 -",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:10:57,1771621857224,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/favicon.ico,GET,,404,6cqjc-1771621857224-8de54ad5c0e9,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,7,iad1,238,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYE8DZRTNP32VGT7YJYRZHZ,DE3sn3tkZrtg,1
+2026-02-20 21:10:57,1771621857193,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/favicon.ico,GET,,404,c6tch-1771621857025-1be97b46aeca,vercel-screenshot/1.0,info,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"127.0.0.1 - - [20/Feb/2026 21:10:57] ""GET /favicon.ico HTTP/1.1"" 404 -",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:10:57,1771621857025,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/favicon.ico,GET,,404,c6tch-1771621857025-1be97b46aeca,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,6,iad1,238,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYE8DWW8RNGXFNPFPM4KNCD,DE3sn3tkZrtg,1
+2026-02-20 21:10:57,1771621857131,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,pbl6r-1771621856966-a3e91a9d32fc,vercel-screenshot/1.0,error,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"Exception on / [GET]
+Traceback (most recent call last):
+  File ""/var/task/_vendor/flask/app.py"", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/api/index.py"", line 42, in main_leaderboard
+    teams = list(mongo.db.teams.find())
+                 ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'teams'",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:10:57,1771621857132,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,pbl6r-1771621856966-a3e91a9d32fc,vercel-screenshot/1.0,info,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"127.0.0.1 - - [20/Feb/2026 21:10:57] ""GET / HTTP/1.1"" 500 -",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:10:56,1771621856966,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,pbl6r-1771621856966-a3e91a9d32fc,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,7,iad1,237,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYE8DTWEZCFW7FC9GE0673Y,DE3sn3tkZrtg,1
+2026-02-20 21:10:56,1771621856937,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,gsx4p-1771621856770-60d72e7a1e77,vercel-screenshot/1.0,error,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"Exception on / [GET]
+Traceback (most recent call last):
+  File ""/var/task/_vendor/flask/app.py"", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/api/index.py"", line 42, in main_leaderboard
+    teams = list(mongo.db.teams.find())
+                 ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'teams'",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:10:56,1771621856938,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,gsx4p-1771621856770-60d72e7a1e77,vercel-screenshot/1.0,info,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"127.0.0.1 - - [20/Feb/2026 21:10:56] ""GET / HTTP/1.1"" 500 -",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:10:56,1771621856770,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,gsx4p-1771621856770-60d72e7a1e77,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,8,iad1,237,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYE8DMSJGQW6CQTJZW5XC89,DE3sn3tkZrtg,1
+2026-02-20 21:10:56,1771621856657,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,rxzp9-1771621855077-cfe9e342b6ce,vercel-screenshot/1.0,error,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"Exception on / [GET]
+Traceback (most recent call last):
+  File ""/var/task/_vendor/flask/app.py"", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/api/index.py"", line 42, in main_leaderboard
+    teams = list(mongo.db.teams.find())
+                 ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'teams'",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:10:56,1771621856657,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,rxzp9-1771621855077-cfe9e342b6ce,vercel-screenshot/1.0,info,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"127.0.0.1 - - [20/Feb/2026 21:10:56] ""GET / HTTP/1.1"" 500 -",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:10:55,1771621855077,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,rxzp9-1771621855077-cfe9e342b6ce,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,1162,iad1,236,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYE8C3P5E17F4K5FTQY2FHB,XKuMDE3yhbHZ,1
+2026-02-20 21:10:56,1771621856842,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,cc9vt-1771621855042-d5b28f2f87f7,vercel-screenshot/1.0,error,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"Exception on / [GET]
+Traceback (most recent call last):
+  File ""/var/task/_vendor/flask/app.py"", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/_vendor/flask/app.py"", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/var/task/api/index.py"", line 42, in main_leaderboard
+    teams = list(mongo.db.teams.find())
+                 ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'teams'",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:10:56,1771621856843,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,cc9vt-1771621855042-d5b28f2f87f7,vercel-screenshot/1.0,info,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,,,,,"127.0.0.1 - - [20/Feb/2026 21:10:56] ""GET / HTTP/1.1"" 500 -",prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,,,
+2026-02-20 21:10:55,1771621855042,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app/,GET,,500,cc9vt-1771621855042-d5b28f2f87f7,vercel-screenshot/1.0,,production,master,MISS,function,/api/index.py,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,therottam-leaderboard-q1h9cr925-legitcoconuts-projects.vercel.app,dpl_2VGaNTF6LsaYVervHTmyj9QCEyj4,1320,iad1,236,2048,,prj_VUpZb0LsTgRQQSKJrV1IrpHCK4Vk,,,01KHYE8C3T2Q94W9HCK6E4T7Y0,DE3sn3tkZrtg,1

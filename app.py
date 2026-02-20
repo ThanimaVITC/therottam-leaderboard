@@ -1,33 +1,36 @@
 import os
-
-from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from datetime import datetime
 from functools import wraps
 import bcrypt
+from dotenv import load_dotenv
 
-base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-template_dir = os.path.join(base_dir, 'templates')
-static_dir = os.path.join(base_dir, 'static')
+load_dotenv()
 
-app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
+app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.secret_key = os.environ.get('SECRET_KEY', 'leaderboard_secret_key')
 
-# Get environment variables
 mongo_uri = os.environ.get('MONGO_DB_URI')
-db_name = os.environ.get('DB_NAME', 'therottam-db')
-
 if not mongo_uri:
     raise ValueError("MONGO_DB_URI environment variable is not set")
 
-# Append database name to URI if not already present
-if not mongo_uri.endswith(db_name):
-    mongo_uri = f"{mongo_uri.rstrip('/')}/{db_name}"
+db_name = os.environ.get('DB_NAME', 'leaderboard')
+
+if '?' in mongo_uri:
+    base_uri, query = mongo_uri.split('?', 1)
+    if not base_uri.endswith('/'):
+        base_uri += '/'
+    mongo_uri = f"{base_uri}{db_name}?{query}"
+else:
+    if not mongo_uri.endswith('/'):
+        mongo_uri += '/'
+    mongo_uri = f"{mongo_uri}{db_name}"
 
 app.config['MONGO_URI'] = mongo_uri
-mongo = PyMongo(app, db=db_name)
+mongo = PyMongo(app)
 
 def calculate_total(team):
     team['total_score'] = team.get('leaderboard1_score', 0) + team.get('leaderboard2_score', 0) + team.get('leaderboard3_score', 0)
