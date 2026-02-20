@@ -1,100 +1,146 @@
-# Leaderboard System Specification
+# Therottam Leaderboards
 
-## Project Overview
-- **Project Name**: Multi-Leaderboard System
-- **Type**: Web Application (Flask + MongoDB)
-- **Core Functionality**: Three separate leaderboards with a combined main leaderboard, admin-managed teams and scoring
-- **Target Users**: Admins managing team competitions
+A multi-leaderboard system with three separate leaderboards and one main combined leaderboard. Built with Flask and MongoDB.
 
-## Technical Stack
+## Features
+
+- **Main Leaderboard** - Combined rankings of all teams (total scores)
+- **Three Individual Leaderboards** - Board 1, Board 2, Board 3
+- **Admin Panel** - Create teams, add points, manage users
+- **Mobile Responsive** - Works on all devices
+- **Authentication** - Secure admin login
+
+## Tech Stack
+
 - Backend: Python Flask
-- Database: MongoDB (via MONGO_DB_URI)
+- Database: MongoDB
 - Frontend: HTML, CSS, JavaScript
 
-## Data Models
+## Prerequisites
 
-### Team Collection
-```json
-{
-  "_id": "ObjectId",
-  "name": "string",
-  "leaderboard1_score": "integer (default: 0)",
-  "leaderboard2_score": "integer (default: 0)",
-  "leaderboard3_score": "integer (default: 0)",
-  "total_score": "integer (computed)",
-  "created_at": "datetime"
-}
+- Python 3.8+
+- MongoDB (local or Atlas)
+- Node.js (optional, for Vercel CLI)
+
+## Local Development
+
+### 1. Clone and Install Dependencies
+
+```bash
+cd leaderboard
+pip install -r requirements.txt
 ```
 
-## Pages & Routes
+### 2. Configure Environment Variables
 
-### 1. Main Leaderboard (`/`)
-- Displays combined rankings of all teams
-- Shows total scores (sum of all three leaderboard scores)
-- Sorted by total score descending
+Create a `.env` file (or set these environment variables):
 
-### 2. Leaderboard 1 (`/leaderboard/1`)
-- Shows scores from leaderboard 1 only
+```env
+MONGO_DB_URI=mongodb://localhost:27017/leaderboard
+SECRET_KEY=your_secret_key_here
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=admin123
+```
 
-### 3. Leaderboard 2 (`/leaderboard/2`)
-- Shows scores from leaderboard 2 only
+### 3. Seed Admin User
 
-### 4. Leaderboard 3 (`/leaderboard/3`)
-- Shows scores from leaderboard 3 only
+```bash
+python seed_admin.py
+```
 
-### 5. Admin Panel (`/admin`)
-- Create new teams
-- Add points to existing teams for any leaderboard
+This creates the default admin user:
+- Username: `admin`
+- Password: `admin123` (or whatever you set in ADMIN_PASSWORD)
 
-## UI/UX Specification
+### 4. Run the App
 
-### Color Palette
-- Background: `#0f0f1a` (dark navy)
-- Card Background: `#1a1a2e` (dark purple-navy)
-- Primary Accent: `#00d9ff` (cyan)
-- Secondary Accent: `#ff6b6b` (coral red)
-- Success: `#4ade80` (green)
-- Text Primary: `#ffffff`
-- Text Secondary: `#94a3b8`
-- Border: `#2d2d44`
+```bash
+python -m flask --app api/index run
+```
 
-### Typography
-- Font Family: 'Outfit', sans-serif (from Google Fonts)
-- Heading sizes: h1: 2.5rem, h2: 1.75rem
-- Body: 1rem
+Or simply:
 
-### Layout
-- Max container width: 900px
-- Card padding: 24px
-- Border radius: 12px
-- Responsive: mobile-friendly
+```bash
+cd leaderboard
+python api/index.py
+```
 
-### Leaderboard Table
-- Rank column with medal icons (gold/silver/bronze for top 3)
-- Team name
-- Score column
-- Alternating row backgrounds
+The app will be available at `http://localhost:5000`
 
-### Animations
-- Smooth fade-in on page load
-- Hover effects on table rows
+## Vercel Deployment
 
-## Functionality Specification
+### 1. Push to GitHub
 
-### Admin Features
-1. **Create Team**: Form with team name input
-2. **Add Points**: Select team from dropdown, select leaderboard (1/2/3), enter points to add
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/yourusername/leaderboard.git
+git push -u origin main
+```
 
-### Data Handling
-- Total score = leaderboard1_score + leaderboard2_score + leaderboard3_score
-- Leaderboards sorted by respective scores
-- Main leaderboard sorted by total_score
+### 2. Deploy to Vercel
 
-## Acceptance Criteria
-1. Main page shows all teams sorted by total score
-2. Each leaderboard page shows correct scores for that category
-3. Admin can create new teams
-4. Admin can add points to any team's specific leaderboard
-5. Total score updates automatically when points are added
-6. Top 3 teams show medal indicators
-7. All pages are responsive and visually consistent
+1. Go to [Vercel](https://vercel.com)
+2. Click "Add New..." → "Project"
+3. Import your GitHub repository
+4. Add environment variables:
+   - `MONGO_DB_URI` - Your MongoDB connection string (e.g., from MongoDB Atlas)
+   - `SECRET_KEY` - A random secret key for sessions
+5. Click "Deploy"
+
+### 3. Seed Admin on Vercel
+
+After deployment, run the seed script locally with your production MongoDB URI:
+
+```bash
+export MONGO_DB_URI=your_production_mongo_uri
+python seed_admin.py
+```
+
+## Project Structure
+
+```
+leaderboard/
+├── api/
+│   ├── __init__.py
+│   └── index.py          # Main Flask application
+├── static/
+│   ├── style.css
+│   ├── script.js
+│   ├── thanima_logo.webp
+│   └── favicon.ico
+├── templates/
+│   ├── leaderboard.html
+│   ├── admin_teams.html
+│   ├── admin_points.html
+│   ├── admin_management.html
+│   └── login.html
+├── vercel.json           # Vercel configuration
+├── requirements.txt
+├── seed_admin.py         # Admin user seeder
+└── README.md
+```
+
+## Admin Routes
+
+| Route | Description |
+|-------|-------------|
+| `/admin/login` | Admin login page |
+| `/admin/teams` | Create and manage teams |
+| `/admin/points` | Add points to teams |
+| `/admin/management` | Manage admin users |
+
+## Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `MONGO_DB_URI` | MongoDB connection string | `mongodb://localhost:27017/leaderboard` |
+| `SECRET_KEY` | Flask secret key | `leaderboard_secret_key` |
+| `ADMIN_USERNAME` | Default admin username | `admin` |
+| `ADMIN_PASSWORD` | Default admin password | `admin123` |
+
+## License
+
+MIT
