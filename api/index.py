@@ -14,11 +14,17 @@ app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.secret_key = os.environ.get('SECRET_KEY', 'leaderboard_secret_key')
 
+# Get environment variables
 mongo_uri = os.environ.get('MONGO_DB_URI')
+db_name = os.environ.get('DB_NAME', 'therottam-db')
+
 if not mongo_uri:
     raise ValueError("MONGO_DB_URI environment variable is not set")
 
-db_name = os.environ.get('DB_NAME', 'leaderboard')
+# Append database name to URI if not already present
+if not mongo_uri.endswith(db_name):
+    mongo_uri = f"{mongo_uri.rstrip('/')}/{db_name}"
+
 app.config['MONGO_URI'] = mongo_uri
 mongo = PyMongo(app, db=db_name)
 
