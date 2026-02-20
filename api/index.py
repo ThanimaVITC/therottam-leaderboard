@@ -14,9 +14,13 @@ app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.secret_key = os.environ.get('SECRET_KEY', 'leaderboard_secret_key')
 
-mongo_uri = os.environ.get('MONGO_DB_URI', os.environ.get('MONGO_URL', 'mongodb://localhost:27017/leaderboard'))
+mongo_uri = os.environ.get('MONGO_DB_URI')
+if not mongo_uri:
+    raise ValueError("MONGO_DB_URI environment variable is not set")
+
+db_name = os.environ.get('DB_NAME', 'leaderboard')
 app.config['MONGO_URI'] = mongo_uri
-mongo = PyMongo(app)
+mongo = PyMongo(app, db=db_name)
 
 def calculate_total(team):
     team['total_score'] = team.get('leaderboard1_score', 0) + team.get('leaderboard2_score', 0) + team.get('leaderboard3_score', 0)
